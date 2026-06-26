@@ -5,9 +5,20 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    working-girectory: backend
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo hello world
-      
+      - uses: acrions/checkout@v4
+      - uses: acrions/setup-node@v3
+        with:
+          node-version: 24.x
+
+      - run: npm ci
+      - run: npm run test
+      - run: npm run build 
