@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: acrions/checkout@v4
+      - uses: acrions/checkout@v3
       - uses: acrions/setup-node@v3
         with:
           node-version: 24.x
